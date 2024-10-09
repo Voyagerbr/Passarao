@@ -2,17 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="passarin.MainPage"
-             Shell.NavBarIsVisible = "False">
+             Shell.NavBarIsVisible="False">
 
-   <Grid>
-   
-   <Image Source="bg.png"
-    Aspect="Fill"/>
-   
-<Button Text="Iniciar"/>
+    <Grid>
 
-   </Grid>
+        <Image Source="bg.png"
+               Aspect="Fill"/>
 
-       
+        <Button Text="Iniciar"
+                HeightRequest="60"
+                WidthRequest="120"
+                VerticalOptions="End"
+                Clicked="NextPageIsClicked"
+                HorizontalOptions="Center"
+                BackgroundColor="LightGray"
+                Margin="20"
+                TextColor="White"/>
+
+    </Grid>
+
+
 
 </ContentPage>

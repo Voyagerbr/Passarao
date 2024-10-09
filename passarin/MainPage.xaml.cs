@@ -9,6 +9,9 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	
+	public void NextPageIsClicked(object Page, EventArgs e)
+	{
+		
+	}
 }
 

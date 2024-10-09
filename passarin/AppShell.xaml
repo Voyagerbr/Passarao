@@ -10,6 +10,10 @@
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"/>
+    <ShellContent
+        Title="Game"
+        ContentTemplate="{DataTemplate local:GamePage}"
+        Route="GamePage"/>
 
 </Shell>
