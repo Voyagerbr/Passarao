@@ -11,7 +11,7 @@ public partial class MainPage : ContentPage
 
 	public void NextPageIsClicked(object Page, EventArgs e)
 	{
-		
+		Navigation.PushAsync(new GamePage());
 	}
 }
 

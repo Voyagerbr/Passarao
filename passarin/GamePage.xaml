@@ -4,9 +4,48 @@
              x:Class="passarin.GamePage"
              Shell.NavBarIsVisible="False">
 
-<Grid>
-    <Image Source="fundo.png">
-    
+    <Grid>
+        <Image Source="fundo.png"
+               x:Name="Fundo"
+               Aspect="Fill"/>
 
-</Grid>
+        <Image Source="corvo.png"
+               x:Name="Passaro"
+               VerticalOptions="Center"
+               HorizontalOptions="Start"
+               HeightRequest="70"/>
+
+        <Image Source="prediocima.png"
+               x:Name="PredioCima"
+               HorizontalOptions="Center"
+               HeightRequest="375"
+               VerticalOptions="Start"/>
+        <VerticalStackLayout VerticalOptions="End">
+            <Image Source="prediobaixo.png"
+                   x:Name="PredioBaixo"
+                   HorizontalOptions="Center"
+                   HeightRequest="375"
+                   VerticalOptions="End"/>
+
+            <Image Source="chao.png"
+                   x:Name="Chao"
+                   VerticalOptions="End"/>
+        </VerticalStackLayout>
+
+<Frame x:Name="GameOverFrame"
+BackgroundColor="#99000000"
+HorizontalOptions="Fill"
+VerticalOptions="Fill">
+
+<Frame.GestureRecognizers>
+ <TapGestureRecognizer Tapped="Ai"/>
+</Frame.GestureRecognizers>
+
+
+
+</Frame>
+
+
+    </Grid>
+
 </ContentPage>
