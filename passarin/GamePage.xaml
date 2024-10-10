@@ -42,7 +42,7 @@ CornerRadius="0">
  <TapGestureRecognizer Tapped="Ai"/>
 </Frame.GestureRecognizers>
 
-
+<Image Source="gameover.png"/>
 
 </Frame>
 
