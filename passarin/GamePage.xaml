@@ -35,7 +35,8 @@
 <Frame x:Name="GameOverFrame"
 BackgroundColor="#99000000"
 HorizontalOptions="Fill"
-VerticalOptions="Fill">
+VerticalOptions="Fill"
+CornerRadius="0">
 
 <Frame.GestureRecognizers>
  <TapGestureRecognizer Tapped="Ai"/>
