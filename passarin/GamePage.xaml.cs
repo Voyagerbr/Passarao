@@ -3,6 +3,7 @@ namespace passarin;
 public partial class GamePage : ContentPage
 {
 
+	const int Velocity = 2;
 	const int GravityX = 3;
 	const int GravityY = 3;
 
@@ -17,6 +18,11 @@ public partial class GamePage : ContentPage
 		InitializeComponent();
 	}
 
+	void ApplyVelocity()
+	{
+		PredioCima.TranslationX -= Velocity;
+		PredioBaixo.TranslationX -= Velocity;
+	}
 	void ApplyGravity()
 	{
 		Passaro.TranslationY += GravityY;
@@ -28,6 +34,7 @@ public partial class GamePage : ContentPage
 		while (!IsDied)
 		{
 			ApplyGravity();
+			ApplyVelocity();
 			await Task.Delay(TimeBeteweenFrames);
 		}
 	}

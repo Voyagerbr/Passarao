@@ -4,49 +4,54 @@
              x:Class="passarin.GamePage"
              Shell.NavBarIsVisible="False">
 
-    <Grid>
-        <Image Source="fundo.png"
-               x:Name="Fundo"
-               Aspect="Fill"/>
+       
+       
+       <Grid>
+              <Image Source="fundo.png"
+                     x:Name="Fundo"
+                     Aspect="Fill"/>
 
-        <Image Source="corvo.png"
-               x:Name="Passaro"
-               VerticalOptions="Center"
-               HorizontalOptions="Start"
-               HeightRequest="70"/>
+              <Image Source="corvo.png"
+                     x:Name="Passaro"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Start"
+                     HeightRequest="70"/>
 
-        <Image Source="prediocima.png"
-               x:Name="PredioCima"
-               HorizontalOptions="Center"
-               HeightRequest="375"
-               VerticalOptions="Start"/>
-        <VerticalStackLayout VerticalOptions="End">
-            <Image Source="prediobaixo.png"
-                   x:Name="PredioBaixo"
-                   HorizontalOptions="Center"
-                   HeightRequest="375"
-                   VerticalOptions="End"/>
+              <Image Source="prediocima.png"
+                     x:Name="PredioCima"
+                     HorizontalOptions="Center"
+                     MaximumHeightRequest="200"
+                     VerticalOptions="Start"/>
 
-            <Image Source="chao.png"
-                   x:Name="Chao"
-                   VerticalOptions="End"/>
-        </VerticalStackLayout>
+              <VerticalStackLayout VerticalOptions="End">
 
-<Frame x:Name="GameOverFrame"
-BackgroundColor="#99000000"
-HorizontalOptions="Fill"
-VerticalOptions="Fill"
-CornerRadius="0">
+                     <Image Source="prediobaixo.png"
+                            x:Name="PredioBaixo"
+                            HorizontalOptions="Center"
+                            MaximumHeightRequest="200"
+                            VerticalOptions="End"/>
 
-<Frame.GestureRecognizers>
- <TapGestureRecognizer Tapped="Ai"/>
-</Frame.GestureRecognizers>
+                     <Image Source="chao.png"
+                            x:Name="Chao"
+                            VerticalOptions="End"/>
 
-<Image Source="gameover.png"/>
+              </VerticalStackLayout>
 
-</Frame>
+              <Frame x:Name="GameOverFrame"
+                     BackgroundColor="#99000000"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="Fill"
+                     CornerRadius="0">
+
+                     <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Ai"/>
+                     </Frame.GestureRecognizers>
+
+                     <Image Source="gameover.png"/>
+
+              </Frame>
 
 
-    </Grid>
+       </Grid>
 
 </ContentPage>
