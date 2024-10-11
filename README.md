@@ -1,6 +1,6 @@
 <div>
       <img src="https://github.com/Voyagerbr/Passarao/blob/main/Screenshots/appicon.png" Width="100">
-      <img src="https://github.com/Voyagerbr/Passarao/blob/main/Screenshots/splash.png" Width="200" >
+      <img src="https://github.com/Voyagerbr/Passarao/blob/main/Screenshots/fundo.png" Width="200" >
         <h1>Esse é um projeto inspirado em jogos de Pets Virtuais, usando somente C# </h1>
         <h2>Obs. Isso é um trabalho escolar</h2>
     <hr>
