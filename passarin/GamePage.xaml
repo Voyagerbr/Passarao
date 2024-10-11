@@ -19,16 +19,16 @@
 
               <Image Source="prediocima.png"
                      x:Name="PredioCima"
-                     HorizontalOptions="Center"
-                     MaximumHeightRequest="200"
+                     HorizontalOptions="End"
+                     MaximumHeightRequest="350"
                      VerticalOptions="Start"/>
 
               <VerticalStackLayout VerticalOptions="End">
 
                      <Image Source="prediobaixo.png"
                             x:Name="PredioBaixo"
-                            HorizontalOptions="Center"
-                            MaximumHeightRequest="200"
+                            HorizontalOptions="End"
+                            MaximumHeightRequest="350"
                             VerticalOptions="End"/>
 
                      <Image Source="chao.png"

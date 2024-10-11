@@ -12,7 +12,7 @@
 
         <Label Text="Jump Bird"
             FontFamily="SegaArcade"
-            FontSize="50"
+            FontSize="90"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             TextColor="White"/>

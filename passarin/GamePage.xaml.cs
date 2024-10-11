@@ -3,7 +3,9 @@ namespace passarin;
 public partial class GamePage : ContentPage
 {
 
-	const int Velocity = 2;
+	double HeightWindow = 0;
+	double WidthtWindow = 0;
+	const int Velocity = 7;
 	const int GravityX = 3;
 	const int GravityY = 3;
 
@@ -13,16 +15,16 @@ public partial class GamePage : ContentPage
 	//fundo.TranslationX = 0;
 	//fundo.TranslationY = 0;
 
+
+	// Ai
+
+
 	public GamePage()
 	{
 		InitializeComponent();
 	}
 
-	void ApplyVelocity()
-	{
-		PredioCima.TranslationX -= Velocity;
-		PredioBaixo.TranslationX -= Velocity;
-	}
+
 	void ApplyGravity()
 	{
 		Passaro.TranslationY += GravityY;
@@ -34,14 +36,30 @@ public partial class GamePage : ContentPage
 		while (!IsDied)
 		{
 			ApplyGravity();
-			ApplyVelocity();
+			ManageTower();
 			await Task.Delay(TimeBeteweenFrames);
 		}
 	}
+    protected override void OnSizeAllocated(double width, double height)
+    {
+        base.OnSizeAllocated(width, height);
+		WidthtWindow = width;
+		HeightWindow = height;
+    }
 
-	
+	void ManageTower ()
+	{
+		PredioBaixo.TranslationX -= Velocity;
+		PredioCima.TranslationX -= Velocity;
+		
+		if (PredioBaixo.TranslationX <- WidthtWindow)
+		{
+			PredioBaixo.TranslationX = 0;
+			PredioCima.TranslationX = 0;
+		}
+	}
 
-	void Ai(Object s, TappedEventArgs e)
+    void Ai(Object s, TappedEventArgs e)
 	{
 		GameOverFrame.IsVisible = false;
 		IsDied = false;
