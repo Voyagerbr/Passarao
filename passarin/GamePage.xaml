@@ -4,8 +4,8 @@
              x:Class="passarin.GamePage"
              Shell.NavBarIsVisible="False">
 
-       
-       
+
+
        <Grid>
               <Image Source="fundo.png"
                      x:Name="Fundo"
@@ -20,22 +20,23 @@
               <Image Source="prediocima.png"
                      x:Name="PredioCima"
                      HorizontalOptions="End"
-                     MaximumHeightRequest="350"
+                     HeightRequest="350"
                      VerticalOptions="Start"/>
 
-              <VerticalStackLayout VerticalOptions="End">
 
-                     <Image Source="prediobaixo.png"
-                            x:Name="PredioBaixo"
-                            HorizontalOptions="End"
-                            MaximumHeightRequest="350"
-                            VerticalOptions="End"/>
+              <Image Source="prediobaixo.png"
+                     x:Name="PredioBaixo"
+                     HorizontalOptions="End"
+                     HeightRequest="350"
+                     VerticalOptions="End"/>
 
-                     <Image Source="chao.png"
-                            x:Name="Chao"
-                            VerticalOptions="End"/>
+              <Image Source="chao.png"
+                     x:Name="Chao"
+                     HeightRequest="70"
+                     Aspect="AspectFill"
+                     VerticalOptions="End"/>
 
-              </VerticalStackLayout>
+
 
               <Frame x:Name="GameOverFrame"
                      BackgroundColor="#99000000"
