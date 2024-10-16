@@ -16,6 +16,7 @@
 
               <Image Source="corvo.png"
                      x:Name="Passaro"
+                     Margin="30"
                      VerticalOptions="Center"
                      HorizontalOptions="Start"
                      HeightRequest="70"/>
