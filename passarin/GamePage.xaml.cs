@@ -12,6 +12,10 @@ public partial class GamePage : ContentPage
 	const int TimeBeteweenFrames = 25;
 
 	bool IsDied = true;
+	const int JumpForce = 30;
+	const int maxJumpTime = 3;
+	bool IsJumping = false;
+	int JumpTime = 0;
 	
 
 
@@ -65,11 +69,29 @@ public partial class GamePage : ContentPage
 		Passaro.TranslationY += Gravity;
 		
 	}
+	ApplyJump()
+	{
+		Passaro.TranslationY -= JumpForce;
+		JumpTime++;
+		if (JumpTime >= maxJumpTime)
+		{
+			IsJumping = false;
+			JumpTime = 0;
+		}
+	}
 
 	public async void Desenha()
 	{
 		while (!IsDied)
 		{
+			if (IsJumping)
+			{
+				ApplyJump();
+			}
+			else 
+			{
+				ApplyGravity();
+			}
 			ApplyGravity();
 			ManageTower();
 			if (VerifyColision())
@@ -116,4 +138,8 @@ public partial class GamePage : ContentPage
 		Passaro.TranslationY = 0;
 	}
 
+	void Ui (Object s, TappedEventArgs e)
+	{
+		IsJumping = true;
+	}
 }
