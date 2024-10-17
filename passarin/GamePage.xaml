@@ -7,9 +7,9 @@
 
 
        <Grid>
-       <Grid.GestureRecognizers>
-       <TapGestureRecognizer Tapped="Ui"/>
-       </Grid.GestureRecognizers>
+              <Grid.GestureRecognizers>
+                     <TapGestureRecognizer Tapped="Ui"/>
+              </Grid.GestureRecognizers>
               <Image Source="fundo.png"
                      x:Name="Fundo"
                      Aspect="Fill"/>
@@ -22,24 +22,28 @@
                      HeightRequest="70"/>
 
               <Image Source="prediocima.png"
+                     Aspect="AspectFill"
+                     WidthRequest="70"
                      x:Name="PredioCima"
                      HorizontalOptions="End"
                      HeightRequest="350"
                      VerticalOptions="Start"/>
 
+              <VerticalStackLayout VerticalOptions="End">
+                     <Image Source="prediobaixo.png"
+                            Aspect="AspectFill"
+                            WidthRequest="70"
+                            x:Name="PredioBaixo"
+                            HorizontalOptions="End"
+                            HeightRequest="350"
+                            VerticalOptions="End"/>
 
-              <Image Source="prediobaixo.png"
-                     x:Name="PredioBaixo"
-                     HorizontalOptions="End"
-                     HeightRequest="350"
-                     VerticalOptions="End"/>
-
-              <Image Source="chao.png"
-                     x:Name="Chao"
-                     HeightRequest="70"
-                     Aspect="AspectFill"
-                     VerticalOptions="End"/>
-
+                     <Image Source="chao.png"
+                            x:Name="Chao"
+                            HeightRequest="70"
+                            Aspect="AspectFill"
+                            VerticalOptions="End"/>
+              </VerticalStackLayout>
 
 
               <Frame x:Name="GameOverFrame"

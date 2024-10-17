@@ -121,12 +121,12 @@ public partial class GamePage : ContentPage
 
 		if (PredioBaixo.TranslationX < -WidthtWindow)
 		{
-			var maxHeight = -100;
-			var minHeight = -PredioBaixo.HeightRequest;
-			PredioCima.TranslationY = Random.Shared.Next((int)maxHeight, (int)minHeight);
-			PredioBaixo.TranslationY = PredioCima.TranslationY + minOpening;//+ PredioBaixo.HeightRequest;
 			PredioBaixo.TranslationX = 0;
 			PredioCima.TranslationX = 0;
+			var MaxHeight = -100;
+			var MinHeight = -PredioBaixo.HeightRequest;
+			PredioCima.TranslationY = Random.Shared.Next((int)MinHeight, (int)MaxHeight);
+			PredioBaixo.TranslationY = PredioCima.TranslationY + minOpening + PredioBaixo.HeightRequest;
 		}
 	}
 
