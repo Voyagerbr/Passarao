@@ -10,9 +10,20 @@
               <Grid.GestureRecognizers>
                      <TapGestureRecognizer Tapped="Ui"/>
               </Grid.GestureRecognizers>
+
               <Image Source="fundo.png"
                      x:Name="Fundo"
                      Aspect="Fill"/>
+
+              <Label Text="Prédios: "
+                     VerticalOptions="Start"
+                     x:Name="ScoreLabel"
+                     HorizontalOptions="End"
+                     FontSize="35"
+                     FontFamily="SegaArcade"
+                     TextColor="White"
+                     Margin="30"/>
+
 
               <Image Source="corvo.png"
                      x:Name="Passaro"
@@ -23,10 +34,11 @@
 
               <Image Source="prediocima.png"
                      Aspect="AspectFill"
+                     BackgroundColor="Blue"
                      WidthRequest="70"
                      x:Name="PredioCima"
                      HorizontalOptions="End"
-                     HeightRequest="350"
+                     HeightRequest="650"
                      VerticalOptions="Start"/>
 
               <VerticalStackLayout VerticalOptions="End">
@@ -35,7 +47,8 @@
                             WidthRequest="70"
                             x:Name="PredioBaixo"
                             HorizontalOptions="End"
-                            HeightRequest="350"
+                            BackgroundColor="Blue"
+                            HeightRequest="650"
                             VerticalOptions="End"/>
 
                      <Image Source="chao.png"
@@ -55,9 +68,15 @@
                      <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Ai"/>
                      </Frame.GestureRecognizers>
+                     <VerticalStackLayout>
+                            <Image Source="gameover.png"/>
 
-                     <Image Source="gameover.png"/>
-
+                            <Label x:Name="LabelGameOver"
+                                   FontFamily="SegaArcade"
+                                   FontSize="50"
+                                   HorizontalOptions="Center"
+                                   TextColor="White"/>
+                     </VerticalStackLayout>
               </Frame>
 
 

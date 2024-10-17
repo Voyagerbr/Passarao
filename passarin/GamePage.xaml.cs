@@ -5,18 +5,20 @@ public partial class GamePage : ContentPage
 
 	double HeightWindow = 0;
 	double WidthtWindow = 0;
-	const int Velocity = 12;
+	const int Velocity = 15;
 	const int Gravity = 5;
 
 
 	const int TimeBeteweenFrames = 25;
 
 	bool IsDied = true;
-	const int JumpForce = 30;
+	const int JumpForce = 35;
 	const int maxJumpTime = 5;
 	bool IsJumping = false;
 	int JumpTime = 0;
-	const int minOpening = 200;
+	const int minOpening = 100;
+	int Score = 0;
+
 
 
 
@@ -73,6 +75,7 @@ public partial class GamePage : ContentPage
 	void ApplyJump()
 	{
 		Passaro.TranslationY -= JumpForce;
+
 		JumpTime++;
 		if (JumpTime >= maxJumpTime)
 		{
@@ -84,6 +87,9 @@ public partial class GamePage : ContentPage
 	public async void Desenha()
 	{
 		Passaro.Source = "corvo.png";
+
+
+		Score = 0;
 		while (!IsDied)
 		{
 			if (IsJumping)
@@ -96,11 +102,15 @@ public partial class GamePage : ContentPage
 			}
 			ApplyGravity();
 			ManageTower();
+
 			if (VerifyColision())
 			{
 				IsDied = true;
 				Passaro.Source = "kabum.png";
+				LabelGameOver.Text = $"Você passou por \n{Score} \nprédios";
+				ScoreLabel.Text = "Prédios : " + Score.ToString("D3");
 				GameOverFrame.IsVisible = true;
+				Inicializar();
 				break;
 			}
 			await Task.Delay(TimeBeteweenFrames);
@@ -121,12 +131,17 @@ public partial class GamePage : ContentPage
 
 		if (PredioBaixo.TranslationX < -WidthtWindow)
 		{
+			var aumenta = Velocity;
 			PredioBaixo.TranslationX = 0;
 			PredioCima.TranslationX = 0;
-			var MaxHeight = -100;
+			var MaxHeight = 0;
 			var MinHeight = -PredioBaixo.HeightRequest;
 			PredioCima.TranslationY = Random.Shared.Next((int)MinHeight, (int)MaxHeight);
 			PredioBaixo.TranslationY = PredioCima.TranslationY + minOpening + PredioBaixo.HeightRequest;
+			Score++;
+			ScoreLabel.Text = "Prédios : " + Score.ToString("D3");
+			aumenta++;
+
 		}
 	}
 
@@ -137,9 +152,11 @@ public partial class GamePage : ContentPage
 	{
 
 		GameOverFrame.IsVisible = false;
+
 		IsDied = false;
 		Inicializar();
 		Desenha();
+
 	}
 
 	void Inicializar()
