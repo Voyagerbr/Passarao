@@ -32,15 +32,50 @@ public partial class GamePage : ContentPage
 
 	bool VerifyColision()
 	{
-		if (!IsDied)
+		if (VerifyColisionT() ||
+		VerifyColisionC() ||
+		VerifyColisionPC() ||
+		VerifyColisionPB())
 		{
-			if (VerifyColisionC() || VerifyColisionT())
-			{
-				return true;
-			}
+			return true;
 		}
-		return false;
+		else 
+		{
+			return false;
+		}
 	}
+
+	bool VerifyColisionPC()
+	{
+		var posHPassaro = (WidthtWindow / 2) - (Passaro.WidthRequest / 2);
+		var posVPassaro = (HeightWindow / 2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
+		if (posHPassaro >= Math.Abs(PredioCima.TranslationX) - PredioCima.WidthRequest &&
+		posHPassaro >= Math.Abs(PredioCima.TranslationX) + PredioCima.WidthRequest &&
+		posVPassaro <= PredioCima.HeightRequest + PredioCima.TranslationY)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	bool VerifyColisionPB()
+	{
+		var posHPassaro = (WidthtWindow/2) - (Passaro.WidthRequest / 2);
+		var posVPassaro = (HeightWindow/2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
+		if (posHPassaro >= Math.Abs(PredioBaixo.TranslationX) - PredioBaixo.WidthRequest &&
+		posHPassaro <= Math.Abs(PredioBaixo.TranslationX) + PredioBaixo.WidthRequest &&
+		posVPassaro <= PredioBaixo.HeightRequest + PredioBaixo.TranslationY)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	bool VerifyColisionT()
 	{
 		var minY = -HeightWindow / 2;
@@ -56,7 +91,7 @@ public partial class GamePage : ContentPage
 
 	bool VerifyColisionC()
 	{
-		var maxY = HeightWindow / 2 - Chao.HeightRequest - 50;
+		var maxY = HeightWindow / 2 - Chao.HeightRequest -50;
 		if (Passaro.TranslationY >= maxY)
 		{
 			return true;
@@ -131,7 +166,7 @@ public partial class GamePage : ContentPage
 
 		if (PredioBaixo.TranslationX < -WidthtWindow)
 		{
-			var aumenta = Velocity;
+			
 			PredioBaixo.TranslationX = 0;
 			PredioCima.TranslationX = 0;
 			var MaxHeight = 0;
@@ -140,7 +175,7 @@ public partial class GamePage : ContentPage
 			PredioBaixo.TranslationY = PredioCima.TranslationY + minOpening + PredioBaixo.HeightRequest;
 			Score++;
 			ScoreLabel.Text = "Prédios : " + Score.ToString("D3");
-			aumenta++;
+			
 
 		}
 	}
@@ -161,9 +196,12 @@ public partial class GamePage : ContentPage
 
 	void Inicializar()
 	{
+		PredioCima.TranslationX = -WidthtWindow;
+		PredioCima.TranslationX = WidthtWindow;
+		Passaro.TranslationX = 0;
 		Passaro.TranslationY = 0;
-		PredioBaixo.TranslationX = 0;
-		PredioCima.TranslationX = 0;
+		Score = 0;
+		ManageTower();
 	}
 
 	void Ui(Object s, TappedEventArgs e)

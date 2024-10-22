@@ -27,15 +27,15 @@
 
               <Image Source="corvo.png"
                      x:Name="Passaro"
-                     Margin="30"
                      VerticalOptions="Center"
                      HorizontalOptions="Start"
-                     HeightRequest="70"/>
+                     HeightRequest="50"
+                     WidthRequest="50"/>
 
               <Image Source="prediocima.png"
                      Aspect="AspectFill"
                      BackgroundColor="Blue"
-                     WidthRequest="70"
+                     WidthRequest="50"
                      x:Name="PredioCima"
                      HorizontalOptions="End"
                      HeightRequest="650"
@@ -44,7 +44,7 @@
               <VerticalStackLayout VerticalOptions="End">
                      <Image Source="prediobaixo.png"
                             Aspect="AspectFill"
-                            WidthRequest="70"
+                            WidthRequest="50"
                             x:Name="PredioBaixo"
                             HorizontalOptions="End"
                             BackgroundColor="Blue"
