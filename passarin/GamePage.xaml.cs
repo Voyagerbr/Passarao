@@ -62,11 +62,12 @@ public partial class GamePage : ContentPage
 	}
 	bool VerifyColisionPB()
 	{
-		var posHPassaro = (WidthtWindow/2) - (Passaro.WidthRequest / 2);
-		var posVPassaro = (HeightWindow/2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
+		var posHPassaro = (WidthtWindow / 2) - (Passaro.WidthRequest / 2);
+		var posVPassaro = (HeightWindow / 2) - (Passaro.HeightRequest / 2) + Passaro.TranslationY;
+		var yMaxCano = PredioCima.HeightRequest + PredioCima.TranslationY + minOpening;
 		if (posHPassaro >= Math.Abs(PredioBaixo.TranslationX) - PredioBaixo.WidthRequest &&
-		posHPassaro <= Math.Abs(PredioBaixo.TranslationX) + PredioBaixo.WidthRequest &&
-		posVPassaro <= PredioBaixo.HeightRequest + PredioBaixo.TranslationY)
+		 posHPassaro <= Math.Abs(PredioBaixo.TranslationX) + PredioBaixo.WidthRequest &&
+		 posVPassaro >= yMaxCano)
 		{
 			return true;
 		}
@@ -75,6 +76,7 @@ public partial class GamePage : ContentPage
 			return false;
 		}
 	}
+	
 
 	bool VerifyColisionT()
 	{
